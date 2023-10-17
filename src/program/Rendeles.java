@@ -60,9 +60,9 @@ public class Rendeles {
         
         try(Scanner sc = new Scanner(file)){
             for (int i = 0; sc.hasNextLine(); i++) {
-                arrayi.
-                sc.nextLine();
-                sc.
+               // arrayi.
+               // sc.nextLine();
+               // sc.
             }
             while (sc.hasNextLine()){
             }
