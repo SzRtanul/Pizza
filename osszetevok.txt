@@ -1,0 +1,3 @@
+Édes: ,Édes: ,Ananász,Nutella,Vanilliakrém,Tejszínhab,Csokiöntet,Lekvár,
+Hús: ,Hús: ,Bacon,Sonka,Kolbász,Hurka,Sós karamella krém,
+Tejtermék és egyebek: ,Tejtermék és egyebek: ,Tojás,Dupla sajt,
