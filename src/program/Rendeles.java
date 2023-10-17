@@ -5,6 +5,7 @@
 package program;
 
 import java.io.*;
+import java.util.Scanner;
 
 /**
  *
@@ -52,17 +53,19 @@ public class Rendeles {
         }
     }
     
-    public static void FileReadn(String[][] arrayi, String filename){
+    public static void FileReadn(String filename) throws FileNotFoundException{
+        String[][] arrayi;
+        File file = new File(
+            "");
         
-        try (InputStreamReader reader = new InputStreamReader(fil, "UTF-8")) {    
-            reader.
-            while(reader.read() >= 0){
-                
+        try(Scanner sc = new Scanner(file)){
+            for (int i = 0; sc.hasNextLine(); i++) {
+                arrayi.
+                sc.nextLine();
+                sc.
             }
-        } catch (FileNotFoundException ex) {
-            //Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedEncodingException ex) {
-            //Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+            while (sc.hasNextLine()){
+            }
         }
     }
 }
