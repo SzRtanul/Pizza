@@ -22,6 +22,11 @@ public class GUI extends javax.swing.JFrame {
     public GUI() {
         initComponents();
         initKomp();
+        try {
+            tablaFeltoltes();
+        } catch (FileNotFoundException ex) {          
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -66,7 +71,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        CbKosar = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
@@ -234,8 +239,8 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel9.setText("Kosár:");
 
-        jComboBox2.setMinimumSize(new java.awt.Dimension(132, 22));
-        jComboBox2.setPreferredSize(new java.awt.Dimension(172, 22));
+        CbKosar.setMinimumSize(new java.awt.Dimension(132, 22));
+        CbKosar.setPreferredSize(new java.awt.Dimension(172, 22));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -245,7 +250,7 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CbKosar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -253,7 +258,7 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CbKosar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addContainerGap())
         );
@@ -339,6 +344,11 @@ public class GUI extends javax.swing.JFrame {
         jScrollPane1.getVerticalScrollBar().setUnitIncrement(16);
     }
     
+    private void tablaFeltoltes() throws FileNotFoundException{
+        Rendeles.FileReadn("pizza.txt");
+        Rendeles.FileReadn("osszetevok.txt");
+    }
+    
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
@@ -397,6 +407,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup BtG_Atmero;
     private javax.swing.ButtonGroup BtG_Osszetevok;
     private javax.swing.ButtonGroup BtG_Vastagsag;
+    private javax.swing.JComboBox<String> CbKosar;
     private javax.swing.JPanel PnOsszetevo;
     private javax.swing.JPanel PnPizza;
     private javax.swing.JButton jButton1;
@@ -406,7 +417,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

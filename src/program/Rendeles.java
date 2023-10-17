@@ -5,7 +5,7 @@
 package program;
 
 import java.io.*;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  *
@@ -53,19 +53,21 @@ public class Rendeles {
         }
     }
     
-    public static void FileReadn(String filename) throws FileNotFoundException{
+    public static String[][] FileReadn(String filename) throws FileNotFoundException{
+        File file = new File(filename);
         String[][] arrayi;
-        File file = new File(
-            "");
+        ArrayList<String> al = new ArrayList<String>();
         
         try(Scanner sc = new Scanner(file)){
             for (int i = 0; sc.hasNextLine(); i++) {
-               // arrayi.
-               // sc.nextLine();
-               // sc.
-            }
-            while (sc.hasNextLine()){
+               al.add(sc.next());
             }
         }
+        
+        arrayi = new String[al.size()][];
+        for (int i = 0; i < al.size(); i++) {
+            arrayi[i] = al.get(0).split(";");
+        }
+        return arrayi;
     }
 }
