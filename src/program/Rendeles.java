@@ -41,7 +41,7 @@ public class Rendeles {
         try (PrintWriter writer = new PrintWriter(fil, "UTF-8")) {    
             for (int i = 0; i < arrayi.length; i++) {
                 String szoveg = arrayi[i][0]+",";
-                for (int j = 0; j < arrayi[i].length; j++) {
+                for (int j = 1; j < arrayi[i].length; j++) {
                     szoveg+=arrayi[i][j]+",";
                 }
                 writer.println(szoveg);
@@ -59,14 +59,14 @@ public class Rendeles {
         ArrayList<String> al = new ArrayList<String>();
         
         try(Scanner sc = new Scanner(file)){
-            for (int i = 0; sc.hasNextLine(); i++) {
-               al.add(sc.next());
+            while(sc.hasNextLine()) {
+                al.add(sc.nextLine());
             }
         }
         
         arrayi = new String[al.size()][];
         for (int i = 0; i < al.size(); i++) {
-            arrayi[i] = al.get(0).split(";");
+            arrayi[i] = al.get(i).split(",");
         }
         return arrayi;
     }

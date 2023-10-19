@@ -1,8 +1,10 @@
 package program;
 
+import java.awt.*;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 /*
@@ -50,7 +52,7 @@ public class GUI extends javax.swing.JFrame {
         jSpinner1 = new javax.swing.JSpinner();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        PnPizza = new javax.swing.JPanel();
+        Pn_Pizza = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton7 = new javax.swing.JRadioButton();
@@ -66,7 +68,7 @@ public class GUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
-        PnOsszetevo = new javax.swing.JPanel();
+        Pn_Osszetevo = new javax.swing.JPanel();
         jCheckBox3 = new javax.swing.JCheckBox();
         jCheckBox4 = new javax.swing.JCheckBox();
         jCheckBox5 = new javax.swing.JCheckBox();
@@ -86,6 +88,9 @@ public class GUI extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel6.setText("Pizzák száma:");
+
+        Pn_Pizza.setMaximumSize(new java.awt.Dimension(125, 32767));
+        Pn_Pizza.setPreferredSize(new java.awt.Dimension(125, 427));
 
         jLabel1.setText("Vastagság:");
 
@@ -123,13 +128,13 @@ public class GUI extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nyers", "Félig nyers", "Sült", "Túl sült", "Égett", "Hamu" }));
 
-        javax.swing.GroupLayout PnPizzaLayout = new javax.swing.GroupLayout(PnPizza);
-        PnPizza.setLayout(PnPizzaLayout);
-        PnPizzaLayout.setHorizontalGroup(
-            PnPizzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PnPizzaLayout.createSequentialGroup()
+        javax.swing.GroupLayout Pn_PizzaLayout = new javax.swing.GroupLayout(Pn_Pizza);
+        Pn_Pizza.setLayout(Pn_PizzaLayout);
+        Pn_PizzaLayout.setHorizontalGroup(
+            Pn_PizzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pn_PizzaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PnPizzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Pn_PizzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jRadioButton1)
                     .addComponent(jRadioButton7)
@@ -144,11 +149,11 @@ public class GUI extends javax.swing.JFrame {
                     .addComponent(jRadioButton6)
                     .addComponent(jLabel4)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
-        PnPizzaLayout.setVerticalGroup(
-            PnPizzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PnPizzaLayout.createSequentialGroup()
+        Pn_PizzaLayout.setVerticalGroup(
+            Pn_PizzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pn_PizzaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -180,9 +185,11 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap(73, Short.MAX_VALUE))
         );
 
-        jScrollPane1.setViewportView(PnPizza);
+        jScrollPane1.setViewportView(Pn_Pizza);
 
-        PnOsszetevo.setBackground(new java.awt.Color(102, 255, 102));
+        Pn_Osszetevo.setBackground(new java.awt.Color(102, 255, 102));
+        Pn_Osszetevo.setMaximumSize(new java.awt.Dimension(189, 32767));
+        Pn_Osszetevo.setPreferredSize(new java.awt.Dimension(189, 286));
 
         jCheckBox3.setText("Vanilliakrém");
 
@@ -201,36 +208,36 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel7.setText("Édes:");
 
-        javax.swing.GroupLayout PnOsszetevoLayout = new javax.swing.GroupLayout(PnOsszetevo);
-        PnOsszetevo.setLayout(PnOsszetevoLayout);
-        PnOsszetevoLayout.setHorizontalGroup(
-            PnOsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PnOsszetevoLayout.createSequentialGroup()
+        javax.swing.GroupLayout Pn_OsszetevoLayout = new javax.swing.GroupLayout(Pn_Osszetevo);
+        Pn_Osszetevo.setLayout(Pn_OsszetevoLayout);
+        Pn_OsszetevoLayout.setHorizontalGroup(
+            Pn_OsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pn_OsszetevoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PnOsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Pn_OsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jCheckBox5)
                     .addComponent(jLabel7)
-                    .addGroup(PnOsszetevoLayout.createSequentialGroup()
-                        .addGroup(PnOsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Pn_OsszetevoLayout.createSequentialGroup()
+                        .addGroup(Pn_OsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jCheckBox3)
                             .addComponent(jCheckBox1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(PnOsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(Pn_OsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jCheckBox2)
                             .addComponent(jCheckBox4))))
-                .addContainerGap(203, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
-        PnOsszetevoLayout.setVerticalGroup(
-            PnOsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PnOsszetevoLayout.createSequentialGroup()
+        Pn_OsszetevoLayout.setVerticalGroup(
+            Pn_OsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pn_OsszetevoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel7)
                 .addGap(4, 4, 4)
-                .addGroup(PnOsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(Pn_OsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox1)
                     .addComponent(jCheckBox2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PnOsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(Pn_OsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox3)
                     .addComponent(jCheckBox4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -238,7 +245,7 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap(188, Short.MAX_VALUE))
         );
 
-        jScrollPane2.setViewportView(PnOsszetevo);
+        jScrollPane2.setViewportView(Pn_Osszetevo);
 
         jPanel4.setBackground(new java.awt.Color(0, 204, 255));
 
@@ -292,8 +299,7 @@ public class GUI extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -325,9 +331,12 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jButton2.setBackground(new java.awt.Color(255, 153, 0));
+        jButton2.setBackground(new java.awt.Color(0, 204, 204));
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton2.setText("Hozzáadás a kosárhoz");
+        jButton2.setText("Megrendelés elküldése");
+        jButton2.setMaximumSize(new java.awt.Dimension(169, 45));
+        jButton2.setMinimumSize(new java.awt.Dimension(169, 45));
+        jButton2.setPreferredSize(new java.awt.Dimension(169, 45));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -338,27 +347,23 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(120, 120, 120))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(125, 125, 125)
-                    .addComponent(jButton2)
-                    .addContainerGap(126, Short.MAX_VALUE)))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(186, 186, 186)
-                    .addComponent(jButton2)
-                    .addContainerGap(186, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -371,6 +376,31 @@ public class GUI extends javax.swing.JFrame {
     private void tablaFeltoltes() throws FileNotFoundException{
         pizza = Rendeles.FileReadn("pizza.txt");
         osszetevok = Rendeles.FileReadn("osszetevok.txt");
+        
+        int pizzaHossz = 1;
+        
+        GridLayout pizzaGL = new GridLayout(1, pizzaHossz);
+        //Pizza
+        
+        for (int i = 0; i < pizza.length; i++) {
+            
+            pizzaHossz += pizza[i].length;
+            pizzaGL.setRows(pizzaHossz);
+            Pn_Pizza.setLayout(pizzaGL);
+            
+            Pn_Pizza.add(new JLabel(pizza[i][0]));
+            //System.out.println(pizza[i][0] +" "+i);
+            for (int j = 1; j < pizza[i].length; j++) {
+                
+            }
+        }
+        //Osszetevok
+        for (int i = 0; i < osszetevok.length; i++) {
+            Pn_Osszetevo.add(new JLabel(osszetevok[i][0]));
+            for (int j = 1; j < osszetevok[i].length; j++) {
+                
+            }
+        }  
     }
     
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -436,8 +466,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup BtG_Osszetevok;
     private javax.swing.ButtonGroup BtG_Vastagsag;
     private javax.swing.JComboBox<String> CbKosar;
-    private javax.swing.JPanel PnOsszetevo;
-    private javax.swing.JPanel PnPizza;
+    private javax.swing.JPanel Pn_Osszetevo;
+    private javax.swing.JPanel Pn_Pizza;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
