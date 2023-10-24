@@ -18,10 +18,13 @@ import javax.swing.*;
  */
 public class GUI extends javax.swing.JFrame {
 
-    String[][] pizza;
-    String[][] osszetevok; 
+    String[][][] pizza;
+    String[][][] osszetevok; 
     String ercheck;
     String eredmeny;
+    
+    ButtonGroup[] pizzaBtG;
+    JCheckBox[] chk;
     /**
      * Creates new form GUI
      */
@@ -62,6 +65,8 @@ public class GUI extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jCheckBox1 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -148,7 +153,7 @@ public class GUI extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -192,18 +197,33 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        jRadioButton1.setText("jRadioButton1");
+        jRadioButton1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jRadioButton1ItemStateChanged(evt);
+            }
+        });
+
+        jCheckBox1.setText("jCheckBox1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(120, 120, 120))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jRadioButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jCheckBox1)
+                        .addGap(17, 17, 17))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,7 +231,10 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, Short.MAX_VALUE)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jCheckBox1))
                 .addContainerGap())
         );
 
@@ -227,15 +250,10 @@ public class GUI extends javax.swing.JFrame {
         osszetevok = Rendeles.FileReadn("osszetevok.txt");
         
         int pizzaHossz = 1;
-        int osszHossz = 1;
+        
         // Pizza változók
         GridLayout pizzaGL = new GridLayout(1, 1);
-        ButtonGroup[] pizzaBtG = new ButtonGroup[pizza.length+1];
-        
-        // Összetevő változók
-        
-        GridLayout osszGL = new GridLayout(1, 1);
-        ButtonGroup[] osszBtG = new ButtonGroup[osszetevok.length];
+        pizzaBtG = new ButtonGroup[pizza.length+1];
         
         // Pizza algoritmus
         for (int i = 0; i < pizza.length; i++) {
@@ -244,19 +262,19 @@ public class GUI extends javax.swing.JFrame {
             pizzaGL.setRows(pizzaHossz);
             Pn_Pizza.setLayout(pizzaGL);
             
-            JLabel jl = new JLabel(pizza[i][0]+":");
+            JLabel jl = new JLabel(pizza[i][0][0]+":");
             
             
             Pn_Pizza.add(jl);
             //System.out.println(pizza[i][0] +" "+i);
             pizzaBtG[i] = new ButtonGroup();
             for (int j = 1; j < pizza[i].length; j++) {
-                JRadioButton jr = new JRadioButton(pizza[i][j]);
+                JRadioButton jr = new JRadioButton(pizza[i][j][0]);
                 pizzaBtG[i].add(jr);
                 Pn_Pizza.add(jr);
             }
         }
-        // Összetevő algoritmus
+        // Összetevő mezo hozzaad
         
             pizzaHossz += osszetevok.length;
             pizzaGL.setRows(pizzaHossz);
@@ -269,39 +287,48 @@ public class GUI extends javax.swing.JFrame {
             //System.out.println(pizza[i][0] +" "+i);
             pizzaBtG[pizza.length] = new ButtonGroup();
             for (int j = 0; j < osszetevok.length; j++) {
-                JRadioButton jr = new JRadioButton(osszetevok[j][0]);
+                JRadioButton jr = new JRadioButton(osszetevok[j][0][0]);
+                jr.addItemListener(new java.awt.event.ItemListener() {
+                    public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                        jChkItemStateChange(evt);
+                    }
+                });
                 pizzaBtG[pizza.length].add(jr);
+                // jr.setSelected(true);
                 Pn_Pizza.add(jr);
             }
         
           // Összetevő választás[BÉTA]
           
-            getOssz();
+            getOssz(1);
         
         
         // Pizza Eredmény
         
         for (int i = 0; i < pizzaBtG.length; i++) {
-            getSelectedButtonText(pizzaBtG[i]);
+            //getSelectedButtonText(pizzaBtG[i]);
+            //System.out.println(pizzaBtG[i].getSelection());
         }
         
         // Összetevő eredmény
     }
     
-    public void getOssz(){
-        int valaszt = 1;
+    public void getOssz(int valaszt){
         
-            osszHossz += osszetevok[valaszt].length;
-            osszGL.setRows(osszHossz);
-            Pn_Osszetevo.setLayout(osszGL);
+        int osszHossz = 1;
+        
+        chk = new JCheckBox[osszetevok[valaszt].length];
+        GridLayout osszGL = new GridLayout(1, 1);
+        
+        osszHossz += osszetevok[valaszt].length;
+        osszGL.setRows(osszHossz);
+        Pn_Osszetevo.setLayout(osszGL);
             
-            Pn_Osszetevo.add(new JLabel(osszetevok[valaszt][0]+":"));
-            osszBtG[valaszt] = new ButtonGroup();
-            for (int j = 1; j < osszetevok[valaszt].length; j++) {
-                JCheckBox chk = new  JCheckBox(osszetevok[valaszt][j]);
-                osszBtG[valaszt].add(chk);
-                Pn_Osszetevo.add(chk);
-            }
+        Pn_Osszetevo.add(new JLabel(osszetevok[valaszt][0][0]+":"));
+        for (int j = 1; j < osszetevok[valaszt].length; j++) {
+            chk[j-1] = new  JCheckBox(osszetevok[valaszt][j][0]);
+            Pn_Osszetevo.add(chk[j-1]);
+        }
     }
     
     public String getSelectedButtonText(ButtonGroup buttonGroup) {
@@ -316,13 +343,48 @@ public class GUI extends javax.swing.JFrame {
         return null;
     }
     
+    private void jChkItemStateChange(java.awt.event.ItemEvent evt) {
+        int valaszt = 0;
+        System.out.println(evt.getID());
+        JCheckBox jch = (JCheckBox)evt.getSource();
+        if (jch.isSelected()) {
+            for (int i = 0; i < osszetevok.length; i++) {
+                System.out.println(osszetevok[i][0][0]);
+                System.out.println(jch.getText());
+                if (osszetevok[i][0][0] == jch.getText()) {
+                    valaszt=i;
+                    break;
+                }
+            }
+        }
+       // jch.get
+        getOssz(valaszt);
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JOptionPane.showMessageDialog(this, "1500 Ft");
+        //JOptionPane.showMessageDialog(this, "1500 Ft");
+        String karakterlanc = "";
+        boolean nullCheck = false;
+        for (int i = 0; i < pizzaBtG.length; i++) {
+            if(getSelectedButtonText(pizzaBtG[i]) == null) nullCheck = true;
+            karakterlanc+= getSelectedButtonText(pizzaBtG[i]);
+        }
+        karakterlanc += "\\";
+        for (int i = 0; i < chk.length; i++) {
+            if(chk[i].isSelected()){
+                karakterlanc += chk[i].getText();
+            }       
+        }
+        if(!nullCheck) CbKosar.addItem(karakterlanc);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jRadioButton1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jRadioButton1ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ItemStateChanged
     
     
     /**
@@ -355,7 +417,7 @@ public class GUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                File obj = new File("the-file-name.txt");
+               /* File obj = new File("the-file-name.txt");
                 try (PrintWriter writer = new PrintWriter(obj, "UTF-8")) {
                     writer.println("The first line");
                     writer.println("The second line");
@@ -363,7 +425,7 @@ public class GUI extends javax.swing.JFrame {
                     //Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (UnsupportedEncodingException ex) {
                     //Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                }*/
                 new GUI().setVisible(true);
             }
         });
@@ -380,11 +442,13 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSpinner jSpinner1;

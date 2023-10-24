@@ -1,4 +1,4 @@
-Vastagság,Vastag,Vékony,
-Alap,Paradicsomos,Tejfölös,
-Átmérő,32cm,45cm,
+Vastagság,Vastag:600,Vékony:500,
+Alap,Paradicsomos:500,Tejfölös:500,
+Átmérő,32cm:1500,45cm:1700,
 Átsültség mértéke,Nyers,Félig nyers,Sült,Túl sült,Égett,Hamu,
