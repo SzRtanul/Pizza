@@ -276,7 +276,20 @@ public class GUI extends javax.swing.JFrame {
         
           // Összetevő választás[BÉTA]
           
-            int valaszt = 1;
+            getOssz();
+        
+        
+        // Pizza Eredmény
+        
+        for (int i = 0; i < pizzaBtG.length; i++) {
+            getSelectedButtonText(pizzaBtG[i]);
+        }
+        
+        // Összetevő eredmény
+    }
+    
+    public void getOssz(){
+        int valaszt = 1;
         
             osszHossz += osszetevok[valaszt].length;
             osszGL.setRows(osszHossz);
@@ -289,15 +302,6 @@ public class GUI extends javax.swing.JFrame {
                 osszBtG[valaszt].add(chk);
                 Pn_Osszetevo.add(chk);
             }
-        
-        
-        // Pizza Eredmény
-        
-        for (int i = 0; i < pizzaBtG.length; i++) {
-            getSelectedButtonText(pizzaBtG[i]);
-        }
-        
-        // Összetevő eredmény
     }
     
     public String getSelectedButtonText(ButtonGroup buttonGroup) {
