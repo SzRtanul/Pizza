@@ -16,18 +16,21 @@ public class Rendeles {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) { 
-        String[][] pizza = new String[][]{
-            {"Vastagság: ", "Vastag", "Vékony"},
-            {"Alap: ", "Paradicsomos", "Tejfölös"},
-            {"Átmérő: ", "32cm", "45cm"},
-            {"Összetevők: ", "Édes", "Hús", "Tejtermék és egyebek"},
-            {"Átsültség mértéke: ", "Nyers", "Félig nyers", "Sült", "Túl sült", "Égett", "Hamu"}
-        };
+    public static void main(String[] args) {
         String[][] osszetevok = new String[][]{
-            {"Édes: ", "Ananász", "Nutella", "Vanilliakrém", "Tejszínhab", "Csokiöntet", "Lekvár"},
-            {"Hús: ", "Bacon", "Sonka", "Kolbász", "Hurka", "Sós karamella krém"},
-            {"Tejtermék és egyebek: ", "Tojás", "Dupla sajt"}
+            {"Édes", "Ananász", "Nutella", "Vanilliakrém", "Tejszínhab", "Csokiöntet", "Lekvár"},
+            {"Sós", "Bacon", "Sonka", "Kolbász", "Hurka", "Sós karamella krém", "Tojás", "Dupla sajt"}
+        };
+        String[] ossz = new String[osszetevok.length];
+        for (int i = 0; i < osszetevok.length; i++) {
+            ossz[i] = osszetevok[i][0];
+        }
+        String[][] pizza = new String[][]{
+            {"Vastagság", "Vastag", "Vékony"},
+            {"Alap", "Paradicsomos", "Tejfölös"},
+            {"Átmérő", "32cm", "45cm"},
+            //{"Összetevők", "Édes", "Sós"},
+            {"Átsültség mértéke", "Nyers", "Félig nyers", "Sült", "Túl sült", "Égett", "Hamu"}
         };
         FileWritn(pizza, "pizza.txt");
         FileWritn(osszetevok, "osszetevok.txt");

@@ -2,10 +2,10 @@ package program;
 
 import java.awt.*;
 import java.io.*;
+import java.util.Enumeration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -48,33 +48,14 @@ public class GUI extends javax.swing.JFrame {
         BtG_Alap = new javax.swing.ButtonGroup();
         BtG_Atmero = new javax.swing.ButtonGroup();
         BtG_Osszetevok = new javax.swing.ButtonGroup();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jSpinner1 = new javax.swing.JSpinner();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Pn_Pizza = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jLabel2 = new javax.swing.JLabel();
-        jRadioButton8 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jLabel3 = new javax.swing.JLabel();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton9 = new javax.swing.JRadioButton();
-        jLabel5 = new javax.swing.JLabel();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         Pn_Osszetevo = new javax.swing.JPanel();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jLabel7 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         CbKosar = new javax.swing.JComboBox<>();
@@ -89,160 +70,28 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel6.setText("Pizzák száma:");
 
-        Pn_Pizza.setMaximumSize(new java.awt.Dimension(125, 32767));
-        Pn_Pizza.setPreferredSize(new java.awt.Dimension(125, 427));
-
-        jLabel1.setText("Vastagság:");
-
-        BtG_Vastagsag.add(jRadioButton1);
-        jRadioButton1.setText("Vastag");
-
-        BtG_Vastagsag.add(jRadioButton7);
-        jRadioButton7.setText("Vékony");
-
-        jLabel2.setText("Alap:");
-
-        BtG_Alap.add(jRadioButton8);
-        jRadioButton8.setText("Paradicsomos");
-
-        BtG_Alap.add(jRadioButton2);
-        jRadioButton2.setText("Tejfölös");
-
-        jLabel3.setText("Átmérő:");
-
-        BtG_Atmero.add(jRadioButton3);
-        jRadioButton3.setText("32cm");
-
-        BtG_Atmero.add(jRadioButton9);
-        jRadioButton9.setText("45cm");
-
-        jLabel5.setText("Összetevők:");
-
-        BtG_Osszetevok.add(jRadioButton5);
-        jRadioButton5.setText("Édes");
-
-        BtG_Osszetevok.add(jRadioButton6);
-        jRadioButton6.setText("Sós");
-
-        jLabel4.setText("Sütés mértéke");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nyers", "Félig nyers", "Sült", "Túl sült", "Égett", "Hamu" }));
-
         javax.swing.GroupLayout Pn_PizzaLayout = new javax.swing.GroupLayout(Pn_Pizza);
         Pn_Pizza.setLayout(Pn_PizzaLayout);
         Pn_PizzaLayout.setHorizontalGroup(
             Pn_PizzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pn_PizzaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(Pn_PizzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton7)
-                    .addComponent(jLabel2)
-                    .addComponent(jRadioButton8)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jLabel3)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton9)
-                    .addComponent(jLabel5)
-                    .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton6)
-                    .addComponent(jLabel4)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+            .addGap(0, 150, Short.MAX_VALUE)
         );
         Pn_PizzaLayout.setVerticalGroup(
             Pn_PizzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pn_PizzaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
+            .addGap(0, 242, Short.MAX_VALUE)
         );
 
         jScrollPane1.setViewportView(Pn_Pizza);
-
-        Pn_Osszetevo.setBackground(new java.awt.Color(102, 255, 102));
-        Pn_Osszetevo.setMaximumSize(new java.awt.Dimension(189, 32767));
-        Pn_Osszetevo.setPreferredSize(new java.awt.Dimension(189, 286));
-
-        jCheckBox3.setText("Vanilliakrém");
-
-        jCheckBox4.setText("Csokiöntet");
-
-        jCheckBox5.setText("Lekvár");
-
-        jCheckBox1.setText("Ananász");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox2.setText("Nutella");
-
-        jLabel7.setText("Édes:");
 
         javax.swing.GroupLayout Pn_OsszetevoLayout = new javax.swing.GroupLayout(Pn_Osszetevo);
         Pn_Osszetevo.setLayout(Pn_OsszetevoLayout);
         Pn_OsszetevoLayout.setHorizontalGroup(
             Pn_OsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pn_OsszetevoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(Pn_OsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jLabel7)
-                    .addGroup(Pn_OsszetevoLayout.createSequentialGroup()
-                        .addGroup(Pn_OsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox3)
-                            .addComponent(jCheckBox1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(Pn_OsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox2)
-                            .addComponent(jCheckBox4))))
-                .addContainerGap(29, Short.MAX_VALUE))
+            .addGap(0, 225, Short.MAX_VALUE)
         );
         Pn_OsszetevoLayout.setVerticalGroup(
             Pn_OsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pn_OsszetevoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7)
-                .addGap(4, 4, 4)
-                .addGroup(Pn_OsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Pn_OsszetevoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jCheckBox4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox5)
-                .addContainerGap(188, Short.MAX_VALUE))
+            .addGap(0, 242, Short.MAX_VALUE)
         );
 
         jScrollPane2.setViewportView(Pn_Osszetevo);
@@ -378,35 +227,91 @@ public class GUI extends javax.swing.JFrame {
         osszetevok = Rendeles.FileReadn("osszetevok.txt");
         
         int pizzaHossz = 1;
+        int osszHossz = 1;
+        // Pizza változók
+        GridLayout pizzaGL = new GridLayout(1, 1);
+        ButtonGroup[] pizzaBtG = new ButtonGroup[pizza.length+1];
         
-        GridLayout pizzaGL = new GridLayout(1, pizzaHossz);
-        //Pizza
+        // Összetevő változók
         
+        GridLayout osszGL = new GridLayout(1, 1);
+        ButtonGroup[] osszBtG = new ButtonGroup[osszetevok.length];
+        
+        // Pizza algoritmus
         for (int i = 0; i < pizza.length; i++) {
             
             pizzaHossz += pizza[i].length;
             pizzaGL.setRows(pizzaHossz);
             Pn_Pizza.setLayout(pizzaGL);
             
-            Pn_Pizza.add(new JLabel(pizza[i][0]));
+            JLabel jl = new JLabel(pizza[i][0]+":");
+            
+            
+            Pn_Pizza.add(jl);
             //System.out.println(pizza[i][0] +" "+i);
+            pizzaBtG[i] = new ButtonGroup();
             for (int j = 1; j < pizza[i].length; j++) {
-                
+                JRadioButton jr = new JRadioButton(pizza[i][j]);
+                pizzaBtG[i].add(jr);
+                Pn_Pizza.add(jr);
             }
         }
-        //Osszetevok
-        for (int i = 0; i < osszetevok.length; i++) {
-            Pn_Osszetevo.add(new JLabel(osszetevok[i][0]));
-            for (int j = 1; j < osszetevok[i].length; j++) {
-                
+        // Összetevő algoritmus
+        
+            pizzaHossz += osszetevok.length;
+            pizzaGL.setRows(pizzaHossz);
+            Pn_Pizza.setLayout(pizzaGL);
+            
+            JLabel jl = new JLabel("Összetevők" +":");
+            
+            
+            Pn_Pizza.add(jl);
+            //System.out.println(pizza[i][0] +" "+i);
+            pizzaBtG[pizza.length] = new ButtonGroup();
+            for (int j = 0; j < osszetevok.length; j++) {
+                JRadioButton jr = new JRadioButton(osszetevok[j][0]);
+                pizzaBtG[pizza.length].add(jr);
+                Pn_Pizza.add(jr);
             }
-        }  
+        
+          // Összetevő választás[BÉTA]
+          
+            int valaszt = 1;
+        
+            osszHossz += osszetevok[valaszt].length;
+            osszGL.setRows(osszHossz);
+            Pn_Osszetevo.setLayout(osszGL);
+            
+            Pn_Osszetevo.add(new JLabel(osszetevok[valaszt][0]+":"));
+            osszBtG[valaszt] = new ButtonGroup();
+            for (int j = 1; j < osszetevok[valaszt].length; j++) {
+                JCheckBox chk = new  JCheckBox(osszetevok[valaszt][j]);
+                osszBtG[valaszt].add(chk);
+                Pn_Osszetevo.add(chk);
+            }
+        
+        
+        // Pizza Eredmény
+        
+        for (int i = 0; i < pizzaBtG.length; i++) {
+            getSelectedButtonText(pizzaBtG[i]);
+        }
+        
+        // Összetevő eredmény
     }
     
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    public String getSelectedButtonText(ButtonGroup buttonGroup) {
+        for (Enumeration<AbstractButton> buttons = buttonGroup.getElements(); buttons.hasMoreElements();) {
+            AbstractButton button = buttons.nextElement();
 
+            if (button.isSelected()) {
+                return button.getText();
+            }
+        }
+
+        return null;
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JOptionPane.showMessageDialog(this, "1500 Ft");
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -468,33 +373,14 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CbKosar;
     private javax.swing.JPanel Pn_Osszetevo;
     private javax.swing.JPanel Pn_Pizza;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSpinner jSpinner1;
