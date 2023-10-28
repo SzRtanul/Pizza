@@ -1,2 +1,2 @@
-Édes,Ananász:900,Nutella:1200,Vanilliakrém:400,Tejszínhab:100,Csokiöntet:200,Lekvár:300,
-Sós,Bacon:600,Sonka:600,Kolbász:700,Hurka:800,Szalámi:450,Sós karamella krém:230,Tojás:120,Dupla sajt:1200,
+Édes:0,Ananász:900,Nutella:1200,Vanilliakrém:400,Tejszínhab:100,Csokiöntet:200,Lekvár:300,
+Sós:0,Bacon:600,Sonka:600,Kolbász:700,Hurka:800,Szalámi:450,Sós karamella krém:230,Tojás:120,Dupla sajt:1200,

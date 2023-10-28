@@ -316,9 +316,9 @@ public class GUI extends javax.swing.JFrame {
     public void getOssz(int valaszt){
         
         int osszHossz = 1;
-        
+        Pn_Osszetevo.removeAll();
         chk = new JCheckBox[osszetevok[valaszt].length];
-        GridLayout osszGL = new GridLayout(1, 1);
+        GridLayout osszGL = new GridLayout(1, 2);
         
         osszHossz += osszetevok[valaszt].length;
         osszGL.setRows(osszHossz);
@@ -329,6 +329,7 @@ public class GUI extends javax.swing.JFrame {
             chk[j-1] = new  JCheckBox(osszetevok[valaszt][j][0]);
             Pn_Osszetevo.add(chk[j-1]);
         }
+        Pn_Osszetevo.updateUI();
     }
     
     public String getSelectedButtonText(ButtonGroup buttonGroup) {
@@ -346,17 +347,18 @@ public class GUI extends javax.swing.JFrame {
     private void jChkItemStateChange(java.awt.event.ItemEvent evt) {
         int valaszt = 0;
         System.out.println(evt.getID());
-        JCheckBox jch = (JCheckBox)evt.getSource();
+        JRadioButton jch = (JRadioButton)evt.getSource();
         if (jch.isSelected()) {
             for (int i = 0; i < osszetevok.length; i++) {
-                System.out.println(osszetevok[i][0][0]);
-                System.out.println(jch.getText());
+                //System.out.println(osszetevok[i][0][0]);
+                //System.out.println(jch.getText());
                 if (osszetevok[i][0][0] == jch.getText()) {
                     valaszt=i;
                     break;
                 }
             }
         }
+        //System.out.println(valaszt);
        // jch.get
         getOssz(valaszt);
     }
@@ -417,15 +419,6 @@ public class GUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               /* File obj = new File("the-file-name.txt");
-                try (PrintWriter writer = new PrintWriter(obj, "UTF-8")) {
-                    writer.println("The first line");
-                    writer.println("The second line");
-                } catch (FileNotFoundException ex) {
-                    //Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (UnsupportedEncodingException ex) {
-                    //Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-                }*/
                 new GUI().setVisible(true);
             }
         });

@@ -18,19 +18,19 @@ public class Rendeles {
      */
     public static void main(String[] args) {
         String[][] osszetevok = new String[][]{
-            {"Édes", "Ananász:900", "Nutella:1200", "Vanilliakrém:400", "Tejszínhab:100", "Csokiöntet:200", "Lekvár:300"},
-            {"Sós", "Bacon:600", "Sonka:600", "Kolbász:700", "Hurka:800", "Szalámi:450", "Sós karamella krém:230", "Tojás:120", "Dupla sajt:1200"}
+            {"Édes:0", "Ananász:900", "Nutella:1200", "Vanilliakrém:400", "Tejszínhab:100", "Csokiöntet:200", "Lekvár:300"},
+            {"Sós:0", "Bacon:600", "Sonka:600", "Kolbász:700", "Hurka:800", "Szalámi:450", "Sós karamella krém:230", "Tojás:120", "Dupla sajt:1200"}
         };
         String[] ossz = new String[osszetevok.length];
         for (int i = 0; i < osszetevok.length; i++) {
             ossz[i] = osszetevok[i][0];
         }
         String[][] pizza = new String[][]{
-            {"Vastagság", "Vastag:600", "Vékony:500"},
-            {"Alap", "Paradicsomos:500", "Tejfölös:500"},
-            {"Átmérő", "32cm:1500", "45cm:1700"},
+            {"Vastagság:0", "Vastag:600", "Vékony:500"},
+            {"Alap:0", "Paradicsomos:500", "Tejfölös:500"},
+            {"Átmérő:0", "32cm:1500", "45cm:1700"},
             //{"Összetevők", "Édes", "Sós"},
-            {"Átsültség mértéke", "Nyers", "Félig nyers", "Sült", "Túl sült", "Égett", "Hamu"}
+            {"Átsültség mértéke:0", "Nyers:0", "Félig nyers:0", "Sült:0", "Túl sült:0", "Égett:0", "Hamu:0"}
         };
         FileWritn(pizza, "pizza.txt");
         FileWritn(osszetevok, "osszetevok.txt");
@@ -74,10 +74,6 @@ public class Rendeles {
             for (int j = 0; j < ideig.length; j++) {
                 String[] ideig2 = ideig[j].split(":");
                 arrayi[i][j] = ideig2;
-                if (ideig2.length < 2) {
-                    arrayi[i][j][2] = new String();
-                    arrayi[i][j][2] = "0";
-                }
             }
         }
         

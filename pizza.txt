@@ -1,4 +1,4 @@
-Vastagság,Vastag:600,Vékony:500,
-Alap,Paradicsomos:500,Tejfölös:500,
-Átmérő,32cm:1500,45cm:1700,
-Átsültség mértéke,Nyers,Félig nyers,Sült,Túl sült,Égett,Hamu,
+Vastagság:0,Vastag:600,Vékony:500,
+Alap:0,Paradicsomos:500,Tejfölös:500,
+Átmérő:0,32cm:1500,45cm:1700,
+Átsültség mértéke:0,Nyers:0,Félig nyers:0,Sült:0,Túl sült:0,Égett:0,Hamu:0,
