@@ -53,7 +53,7 @@ public class GUI extends javax.swing.JFrame {
         BtG_Osszetevok = new javax.swing.ButtonGroup();
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jSpinner1 = new javax.swing.JSpinner();
+        Sp_PizzaSzam = new javax.swing.JSpinner();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Pn_Pizza = new javax.swing.JPanel();
@@ -72,6 +72,8 @@ public class GUI extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+
+        Sp_PizzaSzam.setValue(1);
 
         jLabel6.setText("Pizzák száma:");
 
@@ -157,7 +159,7 @@ public class GUI extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Sp_PizzaSzam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -180,7 +182,7 @@ public class GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Sp_PizzaSzam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
@@ -300,7 +302,7 @@ public class GUI extends javax.swing.JFrame {
         
           // Összetevő választás[BÉTA]
           
-            getOssz(1);
+            //getOssz(1);
         
         
         // Pizza Eredmény
@@ -317,7 +319,7 @@ public class GUI extends javax.swing.JFrame {
         
         int osszHossz = 1;
         Pn_Osszetevo.removeAll();
-        chk = new JCheckBox[osszetevok[valaszt].length];
+        chk = new JCheckBox[osszetevok[valaszt].length-1];
         GridLayout osszGL = new GridLayout(1, 2);
         
         osszHossz += osszetevok[valaszt].length;
@@ -341,12 +343,12 @@ public class GUI extends javax.swing.JFrame {
             }
         }
 
-        return null;
+        return "null";
     }
     
     private void jChkItemStateChange(java.awt.event.ItemEvent evt) {
         int valaszt = 0;
-        System.out.println(evt.getID());
+        //System.out.println(evt.getID());
         JRadioButton jch = (JRadioButton)evt.getSource();
         if (jch.isSelected()) {
             for (int i = 0; i < osszetevok.length; i++) {
@@ -368,16 +370,26 @@ public class GUI extends javax.swing.JFrame {
         String karakterlanc = "";
         boolean nullCheck = false;
         for (int i = 0; i < pizzaBtG.length; i++) {
-            if(getSelectedButtonText(pizzaBtG[i]) == null) nullCheck = true;
-            karakterlanc+= getSelectedButtonText(pizzaBtG[i]);
+            if(getSelectedButtonText(pizzaBtG[i]) == "null") nullCheck = true;
+            karakterlanc+= getSelectedButtonText(pizzaBtG[i])+", ";
         }
-        karakterlanc += "\\";
+        karakterlanc += "\\\\";
+        System.out.println(karakterlanc);
         for (int i = 0; i < chk.length; i++) {
-            if(chk[i].isSelected()){
-                karakterlanc += chk[i].getText();
-            }       
+            //System.out.println("Chk: " + i);
+            //System.out.println(chk[i]);
+            if(/*chk[i] != null &&*/ chk[i].isSelected()){
+                karakterlanc += chk[i].getText()+", ";
+            } 
         }
-        if(!nullCheck) CbKosar.addItem(karakterlanc);
+        if(!nullCheck){
+            CbKosar.addItem(karakterlanc);
+            CbKosar.updateUI();
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Jelöld ki az összes mezőt!");
+        }
+        System.out.println(karakterlanc);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -432,6 +444,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CbKosar;
     private javax.swing.JPanel Pn_Osszetevo;
     private javax.swing.JPanel Pn_Pizza;
+    private javax.swing.JSpinner Sp_PizzaSzam;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -444,6 +457,5 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSpinner jSpinner1;
     // End of variables declaration//GEN-END:variables
 }
