@@ -9,11 +9,6 @@ package program;
  * @author SzabóRoland(SZOFT_20
  */
 public class Pizza {
-    String vastagsag;
-    String alap;
-    int atmero;
-    String[] osszetevok;
-    
     public Pizza(){
     
     }

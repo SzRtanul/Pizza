@@ -382,7 +382,7 @@ public class GUI extends javax.swing.JFrame {
                 karakterlanc += chk[i].getText()+", ";
             } 
         }
-        if(!nullCheck){
+        if(!nullCheck ||  (Integer)Sp_PizzaSzam.getValue() < 0){
             CbKosar.addItem(karakterlanc);
             CbKosar.updateUI();
         }

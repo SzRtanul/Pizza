@@ -77,13 +77,13 @@ public class Rendeles {
             }
         }
         
+       /*
         for (int i = 0; i < arrayi.length; i++) {
             for (int j = 1; j < arrayi[i].length; j++) {
-                
-                    System.out.println(arrayi[i][j][0] + arrayi[i][j][1]);
-                
+                    System.out.println(arrayi[i][j][0] + arrayi[i][j][1]);  
             }
         }
+        */
         
         return arrayi;
     }
